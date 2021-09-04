@@ -1,6 +1,6 @@
 import smarkio from "../Utills/SmarkioDefinition";
 import ReactAudioPlayer from "react-audio-player";
-// import audio from "../Aud"
+import audio from '../Audio-Smarkio/';
 import { connect } from 'react-redux';
 
 
@@ -12,7 +12,7 @@ function Comments({comments}) {
         <div className="text-area-comments">
           <p>{smarkio.definition}</p>
         </div>
-          {/* <ReactAudioPlayer src={audio} controls /> */}
+          <ReactAudioPlayer src={audio} controls />
       </div>
       {comments && comments.map((comment, i) => (
         <div key={comment} className="comment">
