@@ -1,6 +1,6 @@
-// import smarkio from "../Utills/smarkioDefinition";
+import smarkio from "../Utills/SmarkioDefinition";
 import ReactAudioPlayer from "react-audio-player";
-// import audio from "../Audio-Smarkio/Smarkio.mp3";
+// import audio from "../Aud"
 import { connect } from 'react-redux';
 
 
@@ -10,7 +10,7 @@ function Comments({comments}) {
       <p className="comments-title">Comentários</p>
       <div className="comment">
         <div className="text-area-comments">
-          {/* <p>{smarkio.definition}</p> */}
+          <p>{smarkio.definition}</p>
         </div>
           {/* <ReactAudioPlayer src={audio} controls /> */}
       </div>
@@ -20,7 +20,7 @@ function Comments({comments}) {
             {comment}
           </div>
           <ReactAudioPlayer
-            src={`http://localhost:3001/${i + 1}.mp3`}
+            src={`https://watson-back.herokuapp.com/${i + 1}.mp3`}
             controls
           />
         </div>      ))}

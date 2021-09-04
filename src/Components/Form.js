@@ -1,25 +1,16 @@
 import React, { useState , useEffect, useCallback} from 'react';
 import axios from 'axios';
-//   // useEffect, useCallback } from "react";
-// import connectBack from "../Utills/axiosconfig";
 import { useDispatch } from "react-redux";
 
 function Form() {
   const [comment, setComment] = useState("");
   const [id, setId] = useState("");
-//   const fs = async () => {
-//     const data = await fetch('https://watson-back.herokuapp.com/comments')
-//     .then(r => r.json());
-//     console.log(data);
-//     }
-// fs();
 
   const dispatch = useDispatch();
 
   const loadAll = useCallback(async () => {
     const getAll = await fetch('https://watson-back.herokuapp.com/comments')
     .then( r => r.json());
-    console.log(getAll)
     const comments = getAll.map(item => item.comment)
     setId(getAll.length + 1);
     setTimeout(
@@ -32,12 +23,13 @@ function Form() {
     setComment(target.value);
   };
 
-  const handleClik = async () => {
+  const handleClik =  () => {
     if (comment) {
       setComment("");
-       axios.post("https://watson-back.herokuapp.com/comments", { comment });
+      const commentId = id + "";
+       axios.post("https://watson-back.herokuapp.com/comments", { commentId, comment });
        axios.post("https://watson-back.herokuapp.com/watson", { id, comment });
-      // await loadAll();
+      loadAll();
     } else {
       alert("O comentário está vazio!");
     }
