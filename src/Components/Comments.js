@@ -1,6 +1,6 @@
 import smarkio from "../Utills/SmarkioDefinition";
 import ReactAudioPlayer from "react-audio-player";
-import audio from '../Audio-Smarkio/';
+import audio from '../Audio-Smarkio/Smarkio.mp3';
 import { connect } from 'react-redux';
 
 
